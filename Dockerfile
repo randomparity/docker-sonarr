@@ -2,7 +2,7 @@ FROM randomparity/docker-supervisor:latest
 
 MAINTAINER David Christensen <randomparity@gmail.com>
 
-ENV LAST_UPDATE_SABNZBD 2015-01-15
+ENV LAST_UPDATE_SABNZBD 2015-01-16
 
 # Add the Sonarr repository and install the application
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FDA5DFFC && \
@@ -23,5 +23,6 @@ EXPOSE 8989
 
 # Copy the supervisord configuration files into the container
 COPY sonarr.conf /etc/supervisor/conf.d/sonarr.conf
+RUN echo "user=$BASE_USER" >> /etc/supervisor/conf.d/sonarr.conf
 
 # No need to setup a CMD directive since that was handled in the FROM container.
