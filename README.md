@@ -20,7 +20,15 @@ I use a NAS with a "download" and a "media" share with the following structure:
   - Media
   - Media\Television
 
-The container's `download` directory is mounted from `/mnt/download`, the `config` directory is mounted from `/etc/docker/sonarr`, and the `media` directory is mounted from `/mnt/media/television`.  The `/etc/docker/sonarr` directory is configured with world writeable permissions (e.g. `chmod 777 /etc/docker/sonarr`).
+
+Host directory to container `VOLUME` mapping:
+
+| Host Directory | Container Directory | Comment |
+|----------------|---------------------|---------|
+| /mnt/download | /download | |
+| /etc/docker/sonarr | /config | chmod 777 /etc/docker/sonarr |
+| /media/television | /media | |
+| /etc/localtime | /etc/localtime | Set the container's TZ to match the host |
 
 Quick-start
 -----------
