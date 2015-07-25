@@ -1,0 +1,1 @@
+docker run -d --restart always -h sonarr --name sonarr -v /mnt/docker/download:/download -v /mnt/docker/sonarr:/config -v /mnt/docker/media/television:/media -v /etc/localtime:/etc/localtime:ro -v /etc/apt/apt-conf.d/01proxy:/etc/apt/apt-conf.d/01proxy:ro -p 8989:8989 randomparity/docker-sonarr:latest
