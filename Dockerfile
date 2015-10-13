@@ -1,7 +1,7 @@
 FROM randomparity/docker-supervisor:latest
 MAINTAINER David Christensen <randomparity@gmail.com>
 
-ENV SONARR_LAST_UPDATE 2015-07-23
+ENV SONARR_LAST_UPDATE 2015-10-13
 
 # Add the Sonarr repository and install the application
 RUN DEBIAN_FRONTEND=noninteractive apt-key adv \
